@@ -1,0 +1,63 @@
+ul{
+  list-style: none;
+}
+#Menu,#Menu ul {
+  display: none;
+  box-shadow: 0px 1px 2px #ccc;
+  background-color: transparent;
+  position: absolute;
+  width: 330px;
+  z-index: 10;
+  opacity: 100%;
+  box-shadow: 0px 1px 2px #ccc;
+}
+#Menu li {
+  position:relative;
+  background: white;
+  width: 100%;
+  text-align: left;
+}
+#Menu ul,#Menu li:hover ul ul{
+  position: absolute;
+  left: 100%;
+  display: none;
+  top:0
+}
+
+#Menu li:hover ul, #Menu li li:hover ul {
+  display: block;
+}
+
+#Menu .Cat {
+  display: flex;
+  padding: 5px;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+#Menu li .Cat:hover{
+  color: rgb(0, 140, 255);
+  border-bottom: none;
+  background-color: RGBa(200, 200, 200, 0.1);
+}
+
+.Deroulant li:hover #Menu{
+  display: block;
+}
+
+.LibBouton{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: rgba(238, 238, 238, 0.678);
+}
+
+#Menu .Cat label{
+  flex:4;
+  margin-left: 2px;
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+#Menu .Cat .fleche{
+  margin-top: -2%;
+}

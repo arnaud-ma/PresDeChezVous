@@ -1,0 +1,37 @@
+{% macro BoutonLink(Page,NomBouton) %}
+	<form method='GET'>
+		<button name='p' type="submit" value={{Page}}>
+			{{NomBouton | raw}}
+		</button>
+	</form>
+{% endmacro %}
+
+
+{% macro CheckboxCat(name,id,Lib,Value) %}
+	<div class="Cat">
+		{% if id in Value %}
+		<div class="Check"> <input type="checkbox" name="{{name}}[]" value="{{id}}" checked> </div>
+		{% else %}
+			<div class="Check"> <input  type="checkbox" name="{{name}}[]" value="{{id}}"> </div>
+		{% endif %}
+		<label for="{{id}}">{{Lib}}</label>
+		<div class="fleche"> &#9205; </div>
+	</div>
+{% endmacro %}
+
+{% macro CheckboxType(name,id,Lib,Value) %}
+	<div class="Cat">
+		{% if id in Value %}
+			<div class="Check"> <input  type="checkbox" name="{{name}}[]" value="{{id}}" checked> </div>
+		{% else %}
+			<div class="Check"> <input  type="checkbox" name="{{name}}[]" value="{{id}}"> </div>
+		{% endif %}
+		<label for="{{id}}">{{Lib}}</label>
+	</div>
+{% endmacro %}
+
+{% macro EtatType(Etat) %}
+	    {% if Equipement["{{ Etat }}"] is not null %}
+        <div class="ligneEtat"><strong> Eclaire : </strong> {{Equipement['Eclaire'] | replace({'1':'oui' , '0' : 'non'})}} <sup><a></a></sup></strong> </div>
+        {% endif %}
+{% endmacro %}

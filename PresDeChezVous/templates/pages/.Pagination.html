@@ -1,0 +1,23 @@
+<center class="MetaPage"> 
+
+
+        {% if Result['data'] is iterable %}
+            <p class="nPage"> Page actuelle : {{n}}  </p>
+            <div class="nPageModif">
+            {% if n != 1 %} 
+            <a href="../PresDeChezVous/?p=Recherche&n={{1}}"> Première page </a> 
+            <a href="../PresDeChezVous/?p=Recherche&n={{n - 1}}"> Page précédente </a> 
+            {% endif %}
+            <a href="../PresDeChezVous/?p=Recherche&n={{n + 1}}"> Page suivante </a> 
+
+        {% else %}
+            {% if Result == "Aucun resultat pour cette page" %}
+            <p class="nPage"> Page actuelle : {{n}}  </p>
+            <div class="nPageModif">
+                <a href="../PresDeChezVous/?p=Recherche&n={{1}}"> Première page </a> 
+                <a href="../PresDeChezVous/?p=Recherche&n={{n - 1}}"> Page précédente </a>
+            </div>
+            {% endif %}
+        {% endif %}
+
+ </center>

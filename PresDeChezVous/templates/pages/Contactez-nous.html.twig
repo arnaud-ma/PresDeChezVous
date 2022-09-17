@@ -1,0 +1,49 @@
+{% extends ".layout.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/Contactez-nous.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+{% endblock style %}
+
+{% block contenu %}
+    <div class="contactez-nous">
+        <h1>Contactez-nous</h1>
+        <p>
+            Un problème, une question, envie de nous envoyer un message ? N’hésitez
+            pas à utiliser ce formulaire pour prendre contact avec nous !
+        </p>
+        <form action="#" method="POST">
+            <div class="nomMail">
+                <label for="nom">Votre nom : </label>
+                <input type="text" id="nom" name="nom" placeholder="Exemple" required />
+            </div>
+            <div class="nomMail">
+                <label for="email">Votre e-mail : </label>
+                <input type="email" id="email" name="email" placeholder="Exemple@mail.com" required />
+            </div>
+            <div class="sujet">
+                <label for="sujet">Quel est le sujet de votre message ?</label>
+                <select name="sujet" id="sujet" required>
+                    <option value="" disabled selected hidden>
+                        Choisissez le sujet de votre message
+                    </option>
+                    <option value="probleme-compte">Problème avec mon compte</option>
+                    <option value="probleme-ville">Je ne trouve pas ma ville</option>
+                    <option value="">
+                        Un établissement ne se trouve pas sur le site
+                    </option>
+                    <option value="autre">Autre...</option>
+                </select>
+            </div>
+            <div class="msg">
+                <label for="message"></label>
+                <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...."
+                    required></textarea>
+            </div>
+            <div class="boutonValider">
+                <button type="submit" name='envoi'>Envoyer mon message</button>
+            </div>
+                <center class="reponse" style= "margin-top : 2rem;"> {{Envoi}} </center>
+        </form>
+    </div>
+{% endblock %}

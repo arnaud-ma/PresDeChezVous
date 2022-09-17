@@ -1,0 +1,64 @@
+{% from ".macro.twig" import BoutonLink %}
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <title> Près de chez vous - Accueil</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../PresDeChezVous/templates/style/Layout.css">
+    <link rel="stylesheet" href="https://picturepan2.github.io/icons.css/dist/icons.min.css">
+
+    {% block style %} {% endblock %}
+</head>
+
+<body>
+
+    {#! HEADER #}
+    <div class="headerBackground">
+        <div class="headerContenu">
+            <div class="menuDeroulant transparent">
+                <nav>
+                    <ul>
+                        <li class="deroulant"><a href="#"><i class="icon icon-2x icon-menu"></i> </a>
+                            <ul class="sous">
+                                <li><a href="../PresDeChezVous/?p=Accueil">Accueil</a></li>
+                                <li><a href="../PresDeChezVous/?p=Recherche">Rechercher</a></li>
+                                <li><a href="../PresDeChezVous/?p=Evaluation">Évaluez-nous</a></li>
+                                <li><a href="../PresDeChezVous/?p=Contactez-nous">Contactez-nous</a></li>
+                                <li><a href="../PresDeChezVous/?p=Mentions_legales">Mentions Légales / plan du site</a></li>
+                                <li><a href="../PresDeChezVous/?p=Connexion"> Se connecter / s'inscrire </a></li>
+                                <li><a href="../PresDeChezVous/?p=Mon_Compte"> Mon compte</a></li>
+                                <li><a href="#"> Se déconnecter </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="logo transparent">
+                {{BoutonLink('Accueil','<img class="logo-img" src="../PresDeChezVous/templates/img/Logo_site.png"
+                    alt="Logo"> ')}}
+
+
+            </div>
+            <div class="nom"> Près de chez vous</div>
+            <div class="boutonRechercheHeader">
+                {{BoutonLink('Recherche', "&#128269; Rechercher")}}
+            </div>
+            <div class="favoris">
+                {{BoutonLink('Favoris','Mes Favoris')}}
+            </div>
+
+            <div class="BoutonCompte">
+                {{BoutonLink('Mon_Compte','Mon Compte')}}
+            </div>
+        </div>
+    </div>
+    {#! /HEADER #}
+
+    
+    {% block contenu %} {% endblock %}
+
+    <hr class="piedPage">
+</body>

@@ -1,0 +1,84 @@
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.contactez-nous {
+  width: 50%;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 15%), 0 4px 8px 0 rgb(26 26 26 / 20%);
+  padding: 2em;
+}
+
+.contactez-nous h1 {
+  text-align: center;
+}
+.nomMail {
+  display: flex;
+  margin-bottom: 1em;
+}
+.nomMail label {
+  width: 100px;
+}
+.sujet,
+.msg {
+  margin-bottom: 1em;
+}
+
+.msg {
+  text-align: center;
+}
+.msg textarea {
+  width: 100%;
+  height: 5em;
+}
+
+.boutonValider {
+  background-color: rgb(255, 111, 106);
+  text-align: center;
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  transition: 0.1s;
+}
+.boutonValider * {
+  background-color: rgb(255, 111, 106);
+  padding: 5px;
+  font-weight: bold;
+}
+.boutonValider button {
+  transition: 0.5s;
+  box-shadow: -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
+}
+.boutonValider button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.boutonValider button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border: none;
+}

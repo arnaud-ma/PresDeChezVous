@@ -1,0 +1,30 @@
+{% extends ".layout.html" %}
+{% from  ".layout_form.html" import formSett,formInput,bouton %}
+
+{% block style %}
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/Form_User.css">
+{% endblock style %}
+
+
+{% block contenu %}
+
+{% include ".NonDisponible.html" %}
+
+{# Formulaire se connecter #}
+{{formSett('#','POST','Changer de mot de passe')}}
+
+{{ formInput('Ancien mot de passe','password') }}
+{{ formInput('Nouveau mot de passe','password')}}
+{{ formInput('Répéter le mot de passe','password')}}
+
+{{bouton('Valider')}}
+</form>
+{# Formulaire Inscription #} 
+{{formSett('#','POST',"S'inscrire")}}
+
+{{ formInput('Identifiant','text') }}
+{{ formInput('Mot de passe','password')}}
+
+{{bouton("Supprimer")}}
+</form>
+{% endblock contenu %}

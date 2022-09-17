@@ -1,0 +1,67 @@
+/* TOUTE LA PAGE */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: #fafafa;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* !CONNEXION / INSCRIPTION */
+
+form {
+  padding-bottom: 0rem;
+  margin-bottom: 0;
+}
+
+
+.connexionInscription {
+  margin: auto;
+  width: 350px;
+  background-color: white;
+  box-shadow: -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
+  padding: 3rem;
+  padding-bottom: 1rem;
+}
+.connexion {
+  margin-bottom: 2rem;
+}
+.connexion div {
+  margin-bottom: 0.5rem;
+}
+.inscription div {
+  margin-bottom: 0.5rem;
+}
+.connexionInscription button {
+  background-color: rgb(194, 213, 255);
+  padding: 2px;
+  font-weight: bold;
+}
+.champ {
+  display: flex;
+}
+.champ input {
+  position: relative;
+  left: 0px;
+  margin-right: 0;
+  align-self: flex-end;
+}
+.champ label {
+  flex-grow: 1;
+}
+.champ p {
+  flex-grow: 1;
+}
+
+.boutonValider button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border: none;
+}

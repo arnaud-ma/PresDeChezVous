@@ -1,0 +1,112 @@
+{% extends ".layout.html" %}
+{% from ".macro.twig" import Etat %}
+
+{% block style %}
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/Recherche.css">
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/Deroulant_recherche.css">
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/CaseRecherche.css">
+{% endblock style %}
+
+{% block contenu %}
+
+{{ include('.Case_recherche.html') }}
+
+
+{{include('.Pagination.html')}}
+
+
+{% if Result['data'] is iterable %}
+    {% for Equipement in Result['data'] %}
+        {% if Equipement is iterable %}
+        
+        {% if (Equipement['LibCategorie'] == 'Enseignement') or (Equipement['LibCategorie'] == 'Sports, loisirs et culture') %}
+            {% if Equipement['LibType'] | length > 35 %}
+                <div class="caseResultat" style = "border-color : {{ Equipement['Couleur']}} ; height : 120px ;'">
+            {% else %}
+              <div class="caseResultat" style = "border-color : {{ Equipement['Couleur'] }} ; height : 100px'">
+            {% endif %}
+        {% else %}
+            {% if Equipement['LibType'] | length > 35 %}
+                <div class="caseResultat" style = "border-color : {{ Equipement['Couleur']}} ; height : 100px ;'">
+            {% else %}
+                <div class="caseResultat" style = "border-color : {{ Equipement['Couleur']}} ; height : 90px ;'">
+            {% endif %}
+        {% endif %}
+
+            <div class="ligne1">
+                <div class="typeEquipement"> {{Equipement['LibType']}}  </div>
+
+
+                <div class="distance"> à 
+                    {% if Equipement['Distance'] > 1000 %} 
+                    {{Equipement['Distance'] / 1000 }} km 
+                    {% else %}
+                    {{Equipement['Distance']}} m 
+                    {% endif %} &nbsp;   |  &nbsp; Precision : {{Precision[Equipement['QualiteXY']] }} </div>
+                </div>
+            <div class="position">
+                {{Equipement['LibAdresse']}}
+                <a href="https://www.google.com/maps/search/{{Equipement['LatitudeGPS']}},{{Equipement['LongitudeGPS']}}/">
+                    voir le plan</a>
+            </div>
+            <div class="etat">
+                
+                {# ! A faire : boucle #}
+                
+                {% if Equipement['Cantine'] is not null %}
+                    <div class="ligneEtat"><strong> Cantine : </strong> {{Equipement['Cantine'] | replace({'1':'oui' , '0' : 'non'})}} <sup><a></a></sup></strong> </div>
+                {% endif %}
+                
+                {% if Equipement['LyceeCPGE'] is not null %}
+                <div class="ligneEtat"><strong> CPGE : </strong> {{Equipement['LyceeCPGE'] | replace({'1':'oui' , '0' : 'non'})}}</strong> </div>
+                {% endif %}
+                
+                {% if Equipement['EducPrio'] is not null %}
+                <div class="ligneEtat link"><strong> EP : </strong> {{Equipement['EducPrio'] | replace({'1':'oui' , '0' : 'non'})}} <sup><a
+                    href="https://www.education.gouv.fr/l-education-prioritaire-3140" >?</a></sup></strong> </div>
+                {% endif %}
+                
+                {% if Equipement['Internat'] is not null %}
+                <div class="ligneEtat"><strong> Internat : </strong> {{Equipement['Internat'] | replace({'1':'oui' , '0' : 'non'})}} <sup><a></a></sup></strong> </div>
+                {% endif %}
+                
+                {% if Equipement['RPIC'] is not null %}
+                <div class="ligneEtat link"><strong> RPIC : </strong> {{Equipement['RPIC'] | replace({'1':'oui' , '0' : 'non'})}} <sup><a
+                    href="https://fr.wikipedia.org/wiki/Regroupement_p%C3%A9dagogique">?</a></sup></strong> </div>
+                {% endif %}
+                
+                {% if Equipement['Secteur'] is not null %}
+                <div class="ligneEtat"><strong> Secteur : </strong> {{Equipement['Secteur'] | replace({'PU':'Public' , 'PR' : 'Privé'}) }} <sup><a></a></sup></strong> </div>
+                {% endif %}
+                
+                {% if Equipement['Couvert'] is not null %}
+                <div class="ligneEtat"><strong> Couvert : </strong> {{Equipement['Couvert'] | replace({'1':'oui' , '0' : 'non'}) }} <sup><a></a></sup></strong> </div>
+                {% endif %}
+
+                {% if Equipement['Eclaire'] is not null %}
+                <div class="ligneEtat"><strong> Eclaire : </strong> {{Equipement['Eclaire'] | replace({'1':'oui' , '0' : 'non'})}} <sup><a></a></sup></strong> </div>
+                {% endif %}
+
+                {% if Equipement['NbAireJeu'] is not null %}
+                <div class="ligneEtat"><strong> NbaireJeu : </strong> {{Equipement['NbAireJeu']}} <sup><a></a></sup></strong> </div>
+                {% endif %}
+
+                {% if Equipement['NbSalles'] is not null %}
+                <div class="ligneEtat"><strong> NbSalles : </strong> {{Equipement['NbSalles'] }} <sup><a></a></sup></strong> </div>
+                {% endif %}
+                </div>
+            <p class="imageType">
+                <img src="../PresDeChezVous/templates/img/{{Equipement['LibCategorie'] | split(' ')[0] | trim(',') | lower }}.png" alt="{{Equipement['LibCategorie'] | split(' ')[0] | lower }}" width="100">
+            </p>
+        </div> 
+
+        {% endif %}
+{% endfor %}
+{% else %}
+<!-- Si erreur renvoie le détail de l'erreur -->
+<center> {{Result}} </center>
+{% endif %}
+
+
+{% include ".Pagination.html" %}
+{% endblock %}

@@ -1,0 +1,126 @@
+/* !CASE RECHERCHE */
+
+.caseRecherche {
+    background-color: white;
+    max-width: 700px; /* TODO régler la vrai taille plus tard*/
+    margin: 0 auto;
+    padding: 0.5rem;
+    padding-top: 1.5rem;
+    box-shadow: -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
+    border-radius: 10px; /* ?Arrondi les bords */
+  }
+  
+  .caseRecherche * {
+    background-color: white;
+    border: none;
+  }
+  .caseRecherche div {
+    align-self: center;
+  }
+  .caseRecherche div i {
+    align-self: center;
+  }
+  .caseRecherche * {
+    font-size: 20px;
+  }
+  
+  .barreRecherche {
+    text-align: center;
+    display: flex;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    background-color: rgba(238, 238, 238, 0.822);
+    justify-content: center;
+  }
+  
+  .barreRecherche * {
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 20px;
+  }
+  
+  
+  .boutonRechercheCategorie button {
+    display: flex;
+  }
+  
+  .boutonRechercheCategorie:hover {
+    background-color: rgba(238, 238, 238, 0.678);
+  }
+  
+  .barreRecherchePrincipal {
+    display: flex;
+    height: 30px;
+    flex-grow: 1;
+    border-radius: 0px;
+    border-left: solid 1px;
+  }
+
+  .barreRecherchePrincipal input {
+    flex-grow: 1000;
+    width: 200%;
+    height: 100%;
+    font-size: 15px;
+    padding-left: 0.5rem;
+  }
+
+  .barreRecherchePrincipal input:focus {
+    border-radius: 0px;
+    border: solid 1px;
+  }
+  .boutonRecherchePrincipal {
+    padding-right: 0.5rem;
+  }
+
+.ui-menu{
+  width: 100px;
+  z-index: 4;
+}
+  
+  .boutonValider {
+    text-align: center;
+    width: 12%;
+    margin: 0 auto;
+    transition: 0.1s;
+  }
+  .boutonValider button {
+    width: 105%;
+    background-color: rgb(255, 111, 106);
+    padding: 5px;
+    font-weight: bold;
+  }
+  .boutonValider button {
+    transition: 0.5s;
+    box-shadow: -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
+  }
+  .boutonValider button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .boutonValider button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border: none;
+  }
+
+.MetaResultat{
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.NbResult{
+  text-align: right;
+  font-size: 15px;
+  margin-top: 1rem;
+}
+#NbResult{
+  width: 60px;
+  font-size: 15px;
+}
+.NbResult label{
+  font-size: 15px;
+}

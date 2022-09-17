@@ -1,0 +1,35 @@
+{% extends ".layout.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/Accueil.css">
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/CaseRecherche.css">
+<link rel="stylesheet" href="../PresDeChezVous/templates/style/Deroulant_recherche.css">
+{% endblock style %}
+
+
+{% block contenu %}
+
+<h1 class="titre"> Des centaines d'établissements autour de chez vous</h1>
+{{page}}
+
+{{include('.Case_recherche.html')}}
+
+
+<div class="texteExplication">
+    <p> <strong> Vous prévoyez de déménager ou êtes simplement curieux ? </strong> Grâce à ce site, vous pouvez
+        connaître en quelques secondes tous les établissements scolaires, cinémas ou encore toutes les bouangeries
+        qui se trouvent autour de chez vous ou de votre futur chez vous. Avec à ce jour<strong>  {{NbEquipements | number_format(0, '.', ' ')}} équipements </strong>
+         et <strong> {{Categories['Type'] | length | number_format(0,'.',' ')}} catégories disponibles</strong>, vous pouvez affiner votre recherche pour trouver exactement ce que vous voulez.
+        <br>
+        <br> Vous pouvez également participer au développement du site en <a
+           href="../PresDeChezVous/?p=Mon_Compte"> créant un compte</a>. Il vous sera alors possible, pour
+        chaque établissement : de l'ajouter lorsqu'il n'est pas encore recensé sur le site, de le supprimer losqu'il
+        n'existe plus, ou encore de préciser sa localisation lorsqu'elle n'est pas parfaite.
+    </p>
+    Une idée ? Une suggestion ? Vous pouvez nous contacter en <a
+        href="../PresDeChezVous/?p=Contactez-nous">cliquant ici</a>
+</div>
+
+    <video class="videoTuto" preload="metadata" src="../PresDeChezVous/templates/img/VideoTuto.mp4" controls > Désolé, votre navigateur ne supporte
+        pas ce format de vidéo</video>
+{% endblock %}

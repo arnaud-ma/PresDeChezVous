@@ -1,0 +1,86 @@
+{% from ".macro.twig" import BoutonLink,CheckboxCat,CheckboxType %}
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.7.3/themes/base/jquery-ui.css">
+
+<div class="caseRecherche">
+    <div class="barreRecherche">
+        <ul class="Deroulant">
+            <li> <button class="LibBouton"> Catégories &#11206; </button>
+                <ul id="Menu">
+                <form action="../PresDeChezVous/?p=Recherche" method="POST">
+                    {% for ligneCat in Categories['Categorie'] %}
+                    <li>
+                        {{CheckboxCat('Categorie',ligneCat['IdCategorie'],ligneCat['LibCategorie'],Result['Values']['Categorie'])}}
+                        <ul>
+                            {% for ligneSousCat in Categories['SousCategorie'] %}
+                            {% if ligneSousCat['IdCategorie'] == ligneCat['IdCategorie'] %}
+                            <li>
+                                {{CheckboxCat('SousCategorie',ligneSousCat['IdSousCategorie'],ligneSousCat['LibSousCategorie'],Result['Values']['SousCategorie'])}}
+
+                                <ul class="Type">
+                                    {% for ligneType in Categories['Type'] %}
+
+                                    {% if ligneType['IdSousCategorie'] == ligneSousCat['IdSousCategorie'] %}
+                                    <li>
+                                        {{CheckboxType('Type',ligneType['IdType'],ligneType['LibType'],Result['Values']['Type'])}}
+                                    </li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %} 
+                </ul>
+            </li>
+        </ul>
+
+        <div class="barreRecherchePrincipal">
+            {% if Result['data'] is defined %}
+            <input name="Adresse" id="adresse" type="text" placeholder="Saisissez une ville, une adresse..." value={{Result['Values']['Adresse']}}>
+            {% else %}
+            <input name="Adresse" id="adresse" type="text" placeholder="Saisissez une ville, une adresse..." value="">
+            {% endif %}
+            <script>
+                $("#adresse").autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: "https://api-adresse.data.gouv.fr/search/?q"+$("input[name='cp']").val(),
+                            data: { q: request.term },
+                            dataType: "json",
+                            success: function (data) {
+                                response($.map(data.features, function (item) {
+                                    return { label: item.properties.label, value: item.properties.label};
+                                }));
+                            }
+                        });
+                    }
+                });
+            </script>
+        </div>
+
+        <div class="boutonRecherchePrincipal"><button> &#128269; </button> </div>
+    </div>
+        <div class="NbResult">
+            <label for="NbResult">Nombre de résultats par pages : </label>
+            <input type="number" id="NbResult" name="NbResult" min="1" max="200" value="{{NbResult}}">
+        </div>
+        <div class="boutonValider">
+            <button type="submit" name="Recherche">Valider</button>
+        </div>
+        {# n est la seule variable qui n'est pas présent dans la page accueil #}
+    {% if n is defined %}
+    <p class='MetaResultat'> Recherche : {{Result['data']['AdresseRecherche']}} </p>
+    <div>
+    <p class='MetaResultat'> {{Result['count'] |number_format(0,'.',' ') }} résultats sur le département : {{Result['data']['LibDepartement']}} ({{Result['time'] | number_format(3,'.',' ') }} secondes) </p>
+
+    </div>
+    {% endif %}
+    </form>
+
+    {# </form> #}
+</div>

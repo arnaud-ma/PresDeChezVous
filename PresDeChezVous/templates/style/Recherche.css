@@ -1,0 +1,79 @@
+/*CSS pour Page recherche*/
+
+/* !CASE DE RESULTAT */
+
+.caseResultat {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 2em;
+  padding: 10px;
+  border: 1px solid;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 5px; /* ?Arrondi les bords */
+}
+
+.ligne1 {
+  display: flex;
+}
+.ligne1 div {
+  align-self: center;
+}
+
+.typeEquipement {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ligne1 .distance {
+  text-decoration: none;
+  margin: 0;
+  margin-left: 0.5em;
+  color: darkblue;
+  align-self: center;
+}
+.position {
+  margin-top: 0.5em;
+}
+.position a {
+  color: blueviolet;
+}
+.etat {
+  margin-top: 1em;
+  display: flex;
+}
+
+
+.caseResultat .imageType {
+  position: absolute;
+  bottom:10px;
+  right: 10px;
+}
+
+.positionForm form {
+  display: flex;
+  margin-top: 1em;
+}
+
+#adresse {
+  width: 200px;
+}
+center{
+  margin-top: 2%;
+  font-size: large;
+}
+
+.ligneEtat{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 1px solid;
+  vertical-align: bottom;
+  padding-top: 5px;
+}
+
+.nPageModif a{
+  margin-left:10px;
+}

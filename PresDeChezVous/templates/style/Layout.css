@@ -1,0 +1,162 @@
+/* !TOUTE LA PAGE */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fafafa;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+button::after{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+  rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* ! HEADER */
+
+.headerBackground * {
+  padding: 0;
+  margin: 0;
+}
+
+.headerBackground {
+  background-color: white;
+  box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 15%), 0 4px 8px 0 rgb(26 26 26 / 20%);
+  margin-bottom: 2rem;
+  padding: 6px;
+}
+.headerContenu {
+  padding: 8px;
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.headerContenu * {
+  background-color: white;
+}
+.headerContenu div {
+  align-self: center;
+  padding-right: 15px;
+}
+.headerContenu div button {
+  background-color: rgba(182, 221, 255, 0.767);
+  border: 0.5px solid;
+  padding: 3px;
+  transition: 0.5s;
+}
+
+.symbMenu{
+  font-size: 35px;
+  margin: 0;
+  background-color: transparent;
+  position: relative;
+}
+.headerContenu div button i {
+  background: transparent;
+}
+.headerContenu div button:hover {
+  font-size: 15px;
+}
+
+.headerContenu .transparent button {
+  border: 0px;
+  background: transparent;
+}
+
+.logo {
+  padding-right: 15px;
+  margin-top: 5px;
+}
+.logo-img {
+  width: 32px;
+  height: 32px;
+}
+
+.nom {
+  align-self: center;
+  flex-grow: 1;
+}
+
+.boutonRecherche {
+  flex-grow: 1.4;
+  width: 80px;
+  padding: 2px;
+}
+
+/* !DEROULANT */
+.menuDeroulant nav {
+  background-color: white;
+  position: sticky;
+  top: 0px;
+}
+
+.menuDeroulant nav ul {
+  list-style-type: none;
+}
+
+.menuDeroulant nav ul li {
+  text-align: center;
+  position: relative;
+  list-style-type: none;
+}
+
+.menuDeroulant nav ul::after {
+  display: table;
+  clear: both;
+}
+
+.menuDeroulant nav a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+}
+
+.menuDeroulant nav a:hover {
+  color: rgb(0, 140, 255);
+}
+
+.menuDeroulant .deroulant .sous {
+  display: none;
+  box-shadow: 0px 1px 2px #ccc;
+  background-color: white;
+  position: absolute;
+  width: 300px;
+  z-index: 10000;
+  padding-top: 0.5rem;
+  opacity: 101%;
+}
+.menuDeroulant nav > ul li:hover .sous {
+  display: block;
+}
+.menuDeroulant .sous li {
+  width: 100%;
+  text-align: left;
+}
+.menuDeroulant .sous a {
+  padding: 10px;
+  border-bottom: none;
+}
+.menuDeroulant .sous a:hover {
+  border-bottom: none;
+  background-color: RGBa(200, 200, 200, 0.1);
+}
+
+.menuDeroulant .deroulant > a::after {
+  font-size: 12px;
+}
+
+.piedPage{
+  background-color: transparent;
+  border-color: transparent;
+  margin-bottom: 100px;
+}

@@ -1,0 +1,44 @@
+/*CSS pour Page d'accueil*/
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+/* !TITRE */
+.titre {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 22px;
+}
+
+/*! TEXTE */
+
+.texteExplication {
+  max-width: 850px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+/*! VIDEO TUTO */
+
+
+.videoTuto {
+  width: 500px;
+  margin: auto;
+  margin-top: 2rem;
+  align-self: center;
+  z-index: -1;
+  display: flex;
+}

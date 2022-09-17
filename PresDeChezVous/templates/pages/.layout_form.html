@@ -1,0 +1,34 @@
+{#! #Macro pour créer des formulaires #}
+
+{% macro formSett(action,method,titre) %}
+    <form action={{action}} method={{method}} class="connexionInscription">
+        <div class="connexion">
+        <div class="titreConnexion"><strong> {{titre}} </strong></div>
+{% endmacro %}
+
+
+{% macro formInput (nom,type) %}
+<div class="champ">
+    <p> {{nom}} : </p><input type={{type}}
+        
+    {% if type == 'password' %}
+        pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$"
+        placeholder="********" />
+    {% endif %}
+
+    {% if type == 'email' %}
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
+    title="Invalid email address" placeholder="Exemple@gmail.com" />
+    {% endif %}
+
+    {% if type == 'text' %}
+    name="Identifiant" placeholder="Exemple" required />
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro bouton (bouton) %}
+    <button type="submit"> {{bouton}} </button>
+    </div>
+{% endmacro %}
+

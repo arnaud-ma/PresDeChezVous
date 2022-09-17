@@ -1,0 +1,12 @@
+ScriptSQLToBDD :
+    pip install sqlalchemy
+    pip install sqlalchemy-utils
+    pip install pymysql
+
+ScriptToSQL : 
+    pip install pandas
+    pip install numpy
+    pip install pyproj
+    pip install sqlalchemy
+    pip install pymysql
+    pip instal requests
