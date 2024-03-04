@@ -1,4 +1,4 @@
-# Près de chez vous
+# Près de chez vous - Projet de L1
 
 *Près de chez vous* est un site web qui permet de connaître tous les équipements (commerce, services, santé...) ou seulement certains (maternelle,salon de coiffure...) qui se trouvent autour d'un endroit donné en France.
 
